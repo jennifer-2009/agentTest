@@ -13,7 +13,7 @@ PATH = 'driver/chromedriver'
 def test_agent_domain_availabilities():
     options = webdriver.ChromeOptions()
     options.headless = True
-    response = requests.get("http://api.51home.ca/api/agent?offset=0&limit=350&language=0&city=0&sort=0&order=desc")
+    response = requests.get("http://api.51home.ca/api/agent?offset=0&limit=301&language=0&city=0&sort=0&order=desc")
     json_data = response.json()
 
     for data in json_data['data']:

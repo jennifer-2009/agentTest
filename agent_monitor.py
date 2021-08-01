@@ -6,7 +6,7 @@ import json
 import os
 import re
 import time
-import markdown
+
 
 
 def sendDingAlert(info):
@@ -15,7 +15,7 @@ def sendDingAlert(info):
     data = {"msgtype": "markdown", "markdown": {"title": "经纪人域名错误", "text": info}, }
     header = {"Content-Type": "application/json"}
     r = requests.post(url, data=json.dumps(data), headers=header)
-    print(r)
+
 
 
 def runCase(case):
@@ -25,8 +25,8 @@ def runCase(case):
     return logs
 
 
-f = os.popen(" ".join(["ls", "/Users/jenniferjiang/QA/pythonProject/agentTest/house_agent/test_agent_domain_availability.py"]))
-#f = os.popen(" ".join(["ls", "/Users/jenniferjiang/QA/pythonProject/agentTest/test_folder/test_CatchError.py"]))
+f = os.popen(" ".join(["ls", "house_agent/test_agent_domain_availability.py"]))
+#f = os.popen(" ".join(["ls", "test_folder/test_CatchError.py"]))
 apiCases = f.readlines()
 f.close()
 # print(apiCases)
